@@ -14,9 +14,43 @@ Version alternative (avec BONUS) :
 3. Parcourez votre tableau de nombres à l'aide d'une boucle 'for/of' pour calculer la somme des valeurs du tableau.
 4. Affichez le message final : "… + … + … = …".
 */
+/*
+const numbers = [11, 3, 7, 2, 9, 10];
+
+console.log(`Voici le tableau de nombres :`);
+console.table(numbers);
+
+let sumForEach = 0;
+
+numbers.forEach((numbers) => sumForEach += numbers);
+
+console.log(`La somme de tout les nombres du tableaux est : ${sumForEach}.`);
 
 
+for (const number of numbers) {
+    sumForEach += number
+}
 
+console.log(`La somme de tout les nombres du tableaux est : ${sumForEach}.`);
+*/
 
+const numbers = [11, 3, 7, 2, 9, 10];
+let message = "";
+let sum = 0;
+/*
+for (let i = 0; i <numbers.length ; i++) {
+    sum += numbers[i];
+    message +=numbers[i];
+    if (i < numbers.length -1 ){
+        message += " + ";
+    }
+}
+console.log(`${message} = ${sum}`);
+*/
 
-
+for (const number of numbers) {
+    sum += number;
+    message += number + " + ";
+}
+message = message.slice(0, -3);
+console.log(`${message} = ${sum}`);
